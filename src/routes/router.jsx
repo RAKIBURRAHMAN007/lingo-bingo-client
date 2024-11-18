@@ -7,6 +7,7 @@ import Home from "../components/Home/Home";
 import Tutorials from "../components/Tutorials/Tutorials";
 import AboutUs from "../components/AboutUs/AboutUs";
 import Learning from "../components/Learning/Learning";
+import LoginPage from "../components/LoginPage/LoginPage";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
                 path: '/aboutUs',
                 element: <AboutUs></AboutUs>
             },
+            {
+                path: '/login',
+                element: <LoginPage></LoginPage>
+            }
 
         ]
 
