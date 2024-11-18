@@ -10,7 +10,7 @@ const Header = () => {
 
     </>
     return (
-        <div className="navbar bg-white ">
+        <div className="navbar bg-white sticky backdrop-blur-md bg-opacity-40 top-0 z-10 ">
             <div className="navbar-start ">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost text-[#9660ea] lg:hidden">
@@ -53,6 +53,7 @@ const Header = () => {
                     </Link>
                 
             </div>
+            
         </div>
     );
 };

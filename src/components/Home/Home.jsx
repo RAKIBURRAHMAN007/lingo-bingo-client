@@ -2,6 +2,7 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import AboutLIngoBingo from '../AboutLingoBingo/AboutLIngoBingo';
 import Success from '../Success/Success';
+import Misson from '../Mission/Misson';
 
 const Home = () => {
     return (
@@ -14,7 +15,9 @@ const Home = () => {
                     Lingo Bingo is dedicated to making vocabulary learning a fun, interactive, and effective experience for learners. Whether you are a beginner or advancing your language skills, our  platform helps you learn and retain vocabulary with ease. Our goal is to help users overcome the challenges of learning a new language by focusing on vocabulary acquisition through engaging and enjoyable methods.
                 </p>
             </div>
+          
             <AboutLIngoBingo></AboutLIngoBingo>
+            <Misson></Misson>
             <Success></Success>
         </div>
     );

@@ -9,7 +9,7 @@ const Success = () => {
 
             </div>
             <div className="md:flex space-y-2 justify-center w-11/12 mx-auto gap-8 mt-12">
-                <div className="card w-80 bg-white shadow-xl border border-gray-200 rounded-lg">
+                <div className="card w-full md:w-80 bg-white shadow-xl border border-gray-200 rounded-lg">
                     <div className="card-body text-center">
                         <h2 className="text-xl font-semibold text-purple-600">Users</h2>
                         <div className="text-4xl font-bold text-purple-800">
@@ -19,7 +19,7 @@ const Success = () => {
                     </div>
                 </div>
 
-                <div className="card w-80 bg-white shadow-xl border border-gray-200 rounded-lg">
+                <div className="card w-full md:w-80 bg-white shadow-xl border border-gray-200 rounded-lg">
                     <div className="card-body text-center">
                         <h2 className="text-xl font-semibold text-purple-600">Lessons</h2>
                         <div className="text-4xl font-bold text-purple-800">
@@ -30,7 +30,7 @@ const Success = () => {
                 </div>
 
 
-                <div className="card w-80 bg-white shadow-xl border border-gray-200 rounded-lg">
+                <div className="card w-full md:w-80 bg-white shadow-xl border border-gray-200 rounded-lg">
                     <div className="card-body text-center">
                         <h2 className="text-xl font-semibold text-purple-600">Vocabulary</h2>
                         <div className="text-4xl font-bold text-purple-800">
@@ -41,7 +41,7 @@ const Success = () => {
                 </div>
 
 
-                <div className="card w-80 bg-white shadow-xl border border-gray-200 rounded-lg">
+                <div className="card w-full md:w-80 bg-white shadow-xl border border-gray-200 rounded-lg">
                     <div className="card-body text-center">
                         <h2 className="text-xl font-semibold text-purple-600">Tutorials</h2>
                         <div className="text-4xl font-bold text-purple-800">
