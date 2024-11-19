@@ -9,6 +9,7 @@ import AboutUs from "../components/AboutUs/AboutUs";
 import Learning from "../components/Learning/Learning";
 import LoginPage from "../components/LoginPage/LoginPage";
 import RegisterFrom from "../components/RegisterFrom/RegisterFrom";
+import Lesson from "../components/Lesson/Lesson";
 
 const router = createBrowserRouter([
     {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
             {
                 path: '/learning',
                 element: <Learning></Learning>
+              
+                   
+                
+            
             },
             {
                 path: '/tutorials',
@@ -41,6 +46,11 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <RegisterFrom></RegisterFrom>
+            },
+            {
+                path: '/lesson/:id',
+                element: <Lesson></Lesson>
+               
             }
 
         ]
