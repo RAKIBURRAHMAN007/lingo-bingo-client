@@ -23,9 +23,9 @@ const Card = ({ singleData }) => {
                 >
                     <div className="rounded-md px-1 h-full text-center">
                         <h1 className="pt-8 font-bold font-mono text-xl">Word: {word}</h1>
-                        <p className="font-bold font-mono text-xl">Meaning: {meaning}</p>
-                        <p className="font-bold font-mono text-xl">Pronunciation: {pronunciation}</p>
-                        <p className="font-bold font-mono text-xl">Part of Speech: {part_of_speech}</p>
+                        <p className="font-bold font-mono md:text-xl">Meaning: {meaning}</p>
+                        <p className="font-bold font-mono md:text-xl">Pronunciation: {pronunciation}</p>
+                        <p className="font-bold font-mono md:text-xl">Part of Speech: {part_of_speech}</p>
 
                         <div className="flex justify-center mt-2">
                             <button
