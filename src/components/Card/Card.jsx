@@ -1,9 +1,55 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Card = ({singleData}) => {
+const Card = ({ singleData }) => {
+    const { word, pronunciation, meaning, part_of_speech, when_to_say ,example } = singleData;
+
+ 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+   
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    };
+
     return (
         <div>
-            {singleData.word}
+            <div className='border rounded-md shadow-md border-b-red-400 h-56 p-1 backdrop-blur-3xl bg-slate-100'>
+                <div className='rounded-md px-1 h-full text-center'>
+                    <h1 className='pt-8 font-bold font-mono text-xl'>Word: {word}</h1>
+                    <p className='font-bold font-mono text-xl'>Meaning: {meaning}</p>
+                    <p className='font-bold font-mono text-xl'>Pronunciation: {pronunciation}</p>
+                    <p className='font-bold font-mono text-xl'>Part of speech: {part_of_speech}</p>
+
+                    <div className='flex justify-center mt-2'>
+                        <button
+                            onClick={toggleModal}
+                            className="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-purple-500"
+                        >
+                            <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-700"></span>
+                            <span className="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-pink-500 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
+                            <span className="relative text-white">When to say</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            {/* Modal */}
+            {isModalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+                    <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <h2 className="text-xl font-bold mb-4">Word: {word}</h2>
+                        <p className="mb-4 font-mono font-bold">Meaning: {meaning}</p>
+                        <p className="mb-4 font-mono font-bold">When to say: {when_to_say}</p>
+                        <p className="mb-4 font-mono font-bold">Example: {example}</p>
+                        <button
+                            onClick={toggleModal}
+                            className="px-4 py-2 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-700 text-white rounded-md hover:bg-red-600"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };

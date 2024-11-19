@@ -14,16 +14,16 @@ const Lesson = () => {
     console.log(matchData)
     return (
         <div>
-            <h1 className='text-center  text-xl md:text-5xl font-bold'>Lesson No :{id}</h1>
-            data {data.length}
-            <div>
+            <h1 className='text-center  text-xl md:text-5xl font-bold  '>Lesson No :{id}</h1>
+           
+            <div className='grid md:grid-cols-2 lg:grid-cols-2 w-11/12 mx-auto mt-12 gap-2'>
                {
                 matchData.map(singleData=><Card singleData={singleData}></Card>)
                }
 
 
             </div>
-            <div className='flex justify-center'>
+            <div className='flex justify-center mt-12'>
                 <NavLink to={`/learning`} className='btn btn-neutral bg-[#9660ea] text-white'>Back to Lesson</NavLink>
 
             </div>
