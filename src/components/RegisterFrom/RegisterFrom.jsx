@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../provider/AuthProvider';
 import { Result } from 'postcss';
+import { toast } from 'react-toastify';
 
 const RegisterFrom = () => {
-    const { createNewUser,setUser } = useContext(AuthContext);
+    const { createNewUser, setUser } = useContext(AuthContext);
+    const [error, setError] = useState({});
+   
     const navigate = useNavigate();
     const handleRegister = e => {
         e.preventDefault();
@@ -14,7 +17,9 @@ const RegisterFrom = () => {
         const photo = e.target.photoUrl.value;
         const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
         if (!regex.test(password)) {
-            alert('password must be 6 and one upper and lower case')
+
+            toast.error('password must be  6 characters long & at-least 1 upper and lower case letter.')
+
             return;
 
         }
@@ -25,9 +30,9 @@ const RegisterFrom = () => {
                 navigate('/')
                 console.log(registeredUser)
             })
-            .catch(error => {
-                const errorMassage = error.message;
-                console.log(errorMassage)
+            .catch(err => {
+                setError({ ...error, login: err.code })
+                toast.error(err.message)
 
             })
     }
@@ -83,6 +88,13 @@ const RegisterFrom = () => {
                             className="font-mono input input-bordered"
                             required
                         />
+                        {
+                            error.login && <label className="label text-sm text-red-600">
+                                {error.login}
+
+
+                            </label>
+                        }
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-primary bg-[#9660ea] text-white text-xl font-mono">

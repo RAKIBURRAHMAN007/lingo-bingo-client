@@ -10,6 +10,8 @@ import Learning from "../components/Learning/Learning";
 import LoginPage from "../components/LoginPage/LoginPage";
 import RegisterFrom from "../components/RegisterFrom/RegisterFrom";
 import Lesson from "../components/Lesson/Lesson";
+import MyProfile from "../components/MyProfile/MyProfile";
+import PrivateRoute from "./privateRoute";
 
 const router = createBrowserRouter([
     {
@@ -33,7 +35,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/tutorials',
-                element: <Tutorials></Tutorials>
+                element: <PrivateRoute><Tutorials></Tutorials></PrivateRoute>
             },
             {
                 path: '/aboutUs',
@@ -49,8 +51,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/lesson/:id',
-                element: <Lesson></Lesson>
+                element: <PrivateRoute><Lesson></Lesson></PrivateRoute>
                
+            },
+            {
+                path: '/myProfile',
+                element: <PrivateRoute><MyProfile></MyProfile></PrivateRoute>
             }
 
         ]
