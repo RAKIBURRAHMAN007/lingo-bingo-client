@@ -72,8 +72,8 @@ const LoginPage = () => {
                     </div>
                 </form>
             </div>
-            <div className='flex justify-center w-96 mx-auto'>
-                <h1 className='font-mono text-xl'>New to Lingo Bingo? <Link to='/register' className='underline text-[#9660ea]'>Register Now</Link> </h1>
+            <div className='flex justify-center w-2/4 mx-auto'>
+                <h1 className='font-mono text-base'>New to Lingo Bingo? <Link to='/register' className='underline text-[#9660ea]'>Register Now</Link> </h1>
             </div>
             <div className='flex justify-center mt-4'>
                 <GoogleButton

@@ -1,5 +1,6 @@
 import React from 'react';
 import gif from '../../assets/giphy.webp'
+import { Link } from 'react-router-dom';
 const AboutLIngoBingo = () => {
     return (
         <div className="hero backdrop-blur-md  w-11/12 mx-auto">
@@ -14,7 +15,7 @@ const AboutLIngoBingo = () => {
                         <p className="py-6 font-mono text-center  font-medium opacity-75">Start your Spanish learning journey today at Lingo Bingo, where every word learned unlocks new opportunities for you to communicate, understand, and enjoy the Spanish language.</p>
                     </div>
                     <div className=''>
-                        <button className="btn btn-primary">Get Started</button>
+                        <Link to='/learning' className="btn text-white btn-primary bg-[#9660ea] ">Get Started</Link>
                     </div>
                 </div>
             </div>

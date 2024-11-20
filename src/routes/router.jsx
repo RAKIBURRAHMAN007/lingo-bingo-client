@@ -14,11 +14,13 @@ import MyProfile from "../components/MyProfile/MyProfile";
 import PrivateRoute from "./privateRoute";
 import ForgetPassword from "../components/ForgetPassword/ForgetPassword";
 import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
 

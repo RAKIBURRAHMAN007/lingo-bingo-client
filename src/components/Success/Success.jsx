@@ -24,7 +24,7 @@ const Success = () => {
                     <div className="card-body text-center">
                         <h2 className="text-xl font-semibold text-purple-600">Lessons</h2>
                         <div className="text-4xl font-bold text-purple-800">
-                            <CountUp start={0} end={10} duration={7} />
+                            <CountUp start={0} end={20} duration={7} />
                         </div>
                         <p className="text-gray-700 mt-4">Total Lessons Available</p>
                     </div>
@@ -35,7 +35,7 @@ const Success = () => {
                     <div className="card-body text-center">
                         <h2 className="text-xl font-semibold text-purple-600">Vocabulary</h2>
                         <div className="text-4xl font-bold text-purple-800">
-                            <CountUp start={0} end={250} duration={7} />
+                            <CountUp start={0} end={550} duration={7} />
                         </div>
                         <p className="text-gray-700 mt-4">Total Vocabulary Words</p>
                     </div>
@@ -46,7 +46,7 @@ const Success = () => {
                     <div className="card-body text-center">
                         <h2 className="text-xl font-semibold text-purple-600">Tutorials</h2>
                         <div className="text-4xl font-bold text-purple-800">
-                            <CountUp start={0} end={10} duration={7} />
+                            <CountUp start={0} end={50} duration={7} />
                         </div>
                         <p className="text-gray-700 mt-4">Total Tutorials Available</p>
                     </div>
