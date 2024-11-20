@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import GoogleButton from 'react-google-button'
 import { AuthContext } from '../../provider/AuthProvider';
@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 const LoginPage = () => {
     const navigate = useNavigate();
     const { googleSignIn, userLogin, setUser } = useContext(AuthContext);
+    const emailRef = useRef();
     const [error, setError] = useState({});
     const location = useLocation();
     const handleGoogleSignIn = e => {
@@ -46,7 +47,7 @@ const LoginPage = () => {
                         <label className="label">
                             <span className="label-text text-xl font-mono">Email</span>
                         </label>
-                        <input type="email" name='email' placeholder="email" className="font-mono input input-bordered" required />
+                        <input type="email" ref={emailRef} name='email' placeholder="email" className="font-mono input input-bordered" required />
                     </div>
                     <div className="form-control">
                         <label className="label">
@@ -60,9 +61,9 @@ const LoginPage = () => {
 
                             </label>
                         }
-                        
+
                         <label className="label">
-                            <a href="#" className="label-text-alt font-mono link link-hover text-xl">Forgot password?</a>
+                            <Link to='/forgetPassword' className="label-text-alt font-mono link link-hover text-xl">Forgot password?</Link>
                         </label>
 
                     </div>

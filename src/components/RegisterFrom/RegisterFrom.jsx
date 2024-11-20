@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../../provider/AuthProvider';
+import { auth, AuthContext } from '../../provider/AuthProvider';
 import { Result } from 'postcss';
 import { toast } from 'react-toastify';
+import { updateProfile } from 'firebase/auth';
 
 const RegisterFrom = () => {
     const { createNewUser, setUser } = useContext(AuthContext);
@@ -29,12 +30,20 @@ const RegisterFrom = () => {
                 setUser(registeredUser);
                 navigate('/')
                 console.log(registeredUser)
+                const profile = {
+                    displayName: name,
+                    photoURL: photo
+                }
+                updateProfile(auth.currentUser,profile)
+                
             })
             .catch(err => {
                 setError({ ...error, login: err.code })
                 toast.error(err.message)
 
             })
+
+
     }
     return (
         <div>

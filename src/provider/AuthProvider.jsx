@@ -3,7 +3,7 @@ import app from "../fireBase/firebase.config";
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 export const AuthContext = createContext();
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
 
 const AuthProvider = ({ children }) => {
