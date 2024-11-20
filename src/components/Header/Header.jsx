@@ -43,7 +43,7 @@ const Header = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl md:text-2xl text-[#9660ea]">Lingo Bingo</a>
+                <a className="btn btn-ghost text-sm md:text-2xl text-[#9660ea]">Lingo Bingo</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-xl text-[#9660ea]">
@@ -56,7 +56,7 @@ const Header = () => {
 
 
                 {
-                    user ? <div className=' flex  gap-2 items-center'>
+                    user ? <div className=' flex  gap-1  items-center'>
                         <div className='w-10 rounded-full border bg-purple-400 '>
                             <img className='rounded-full p-1' src={user.photoURL} alt="" />
 

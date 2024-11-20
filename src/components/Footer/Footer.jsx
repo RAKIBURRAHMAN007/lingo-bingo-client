@@ -7,7 +7,7 @@ const Footer = () => {
             <footer className="footer w-11/12 mx-auto footer-center bg-white text-black rounded p-5">
                 <nav className="gap-2">
                     <h1 className="link link-hover font-bold text-2xl">Contact Info</h1>
-                    <p className='font-mono text-xl'>
+                    <p className='font-mono text-base md:text-xl'>
                         <span className='font-bold'>Email:</span> ratulrakibur5@gmail.com
                     </p>
                     <p className='font-mono text-xl'>
