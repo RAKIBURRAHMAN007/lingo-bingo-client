@@ -27,14 +27,20 @@ const RegisterFrom = () => {
         createNewUser(email, password)
             .then(result => {
                 const registeredUser = result.user;
-                setUser(registeredUser);
+               
                 navigate('/')
                 console.log(registeredUser)
                 const profile = {
                     displayName: name,
                     photoURL: photo
                 }
+                
                 updateProfile(auth.currentUser,profile)
+                setUser({
+                    ...registeredUser,
+                    displayName: name,
+                    photoURL: photo
+                });
                 
             })
             .catch(err => {
