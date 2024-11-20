@@ -13,6 +13,7 @@ import Lesson from "../components/Lesson/Lesson";
 import MyProfile from "../components/MyProfile/MyProfile";
 import PrivateRoute from "./privateRoute";
 import ForgetPassword from "../components/ForgetPassword/ForgetPassword";
+import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 
 const router = createBrowserRouter([
     {
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
                 path: '/forgetPassword',
                 element: <ForgetPassword></ForgetPassword>
 
+            },
+            {
+                path: '/updateProfile',
+                element: <UpdateProfile></UpdateProfile>
             }
 
         ]
