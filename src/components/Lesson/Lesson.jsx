@@ -10,15 +10,16 @@ const Lesson = () => {
         .then(res=>res.json())
         .then(data=>setData(data))
     },[])
+  
     const matchData = [...data.filter(singledata => singledata.lesson_no===parseInt(id))];
     console.log(matchData)
     return (
         <div>
             <h1 className='text-center  text-xl md:text-5xl font-bold  '>Lesson No :{id}</h1>
            
-            <div className='grid md:grid-cols-2 lg:grid-cols-2 w-11/12 mx-auto mt-12 gap-2'>
+            <div  className='grid md:grid-cols-2 lg:grid-cols-2 w-11/12 mx-auto mt-12 gap-2'>
                {
-                matchData.map(singleData=><Card singleData={singleData}></Card>)
+                matchData.map(singleData=><Card  singleData={singleData}></Card>)
                }
 
 

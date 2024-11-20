@@ -3,13 +3,23 @@ import { useState } from "react";
 const Card = ({ singleData }) => {
     const { word, pronunciation, meaning, part_of_speech, when_to_say, example, difficulty } = singleData;
     const [isModalOpen, setIsModalOpen] = useState(false);
+
     const toggleModal = () => {
         setIsModalOpen(!isModalOpen);
     };
 
+    const pronounceWord = (word) => {
+        const utterance = new SpeechSynthesisUtterance(word);
+        utterance.lang = 'es-ES';
+        window.speechSynthesis.speak(utterance);
+    };
+
     return (
         <>
-            <div className='bg-slate-100 p-3 rounded-md border backdrop-blur-3xl'>
+            <div
+                className={`bg-slate-100 p-3 rounded-md border backdrop-blur-3xl cursor-pointer`}
+                onClick={() => pronounceWord(word)} // Pronounce word when card is clicked
+            >
                 <div
                     className={`rounded-md shadow-md h-56 p-1 backdrop-blur-3xl ${
                         difficulty === 'easy'
@@ -29,7 +39,10 @@ const Card = ({ singleData }) => {
 
                         <div className="flex justify-center mt-2">
                             <button
-                                onClick={toggleModal}
+                                onClick={(e) => {
+                                    e.stopPropagation(); // Prevent modal toggle from being triggered
+                                    toggleModal();
+                                }}
                                 className="relative inline-flex items-center justify-center p-4 px-5 py-3 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out rounded-full shadow-xl group hover:ring-1 hover:ring-purple-500"
                             >
                                 <span className="absolute inset-0 w-full h-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-700"></span>
@@ -60,4 +73,5 @@ const Card = ({ singleData }) => {
         </>
     );
 };
+
 export default Card;
