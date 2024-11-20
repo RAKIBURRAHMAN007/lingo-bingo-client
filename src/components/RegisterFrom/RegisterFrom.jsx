@@ -18,8 +18,9 @@ const RegisterFrom = () => {
         const photo = e.target.photoUrl.value;
         const regex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
         if (!regex.test(password)) {
-
+            setError({ ...error, password: 'password must be  6 characters long & at-least 1 upper and lower case letter.' })
             toast.error('password must be  6 characters long & at-least 1 upper and lower case letter.')
+
 
             return;
 
@@ -106,6 +107,13 @@ const RegisterFrom = () => {
                         {
                             error.login && <label className="label text-sm text-red-600">
                                 {error.login}
+
+
+                            </label>
+                        }
+                        {
+                            error.password && <label className="label text-sm text-red-600">
+                                {error.password}
 
 
                             </label>
