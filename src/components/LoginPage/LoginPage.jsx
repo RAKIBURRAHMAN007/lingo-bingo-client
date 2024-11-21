@@ -66,8 +66,8 @@ const LoginPage = () => {
                             <span
                                 className="label-text-alt font-mono link link-hover text-xl cursor-pointer"
                                 onClick={() => {
-                                    const email = emailRef.current.value; // Get the email from the input field
-                                    navigate('/forgetPassword', { state: { email } }); // Pass the email to Forget Password page
+                                    const email = emailRef.current.value; 
+                                    navigate('/forgetPassword', { state: { email } }); 
                                 }}
                             >
                                 Forgot password?
