@@ -30,11 +30,11 @@ const LoginPage = () => {
                 navigate(location?.state ? location.state : '/')
             })
             .catch(err => {
-               
+
                 setError({ ...error, login: err.code })
                 toast.error(err.message)
 
-                
+
             })
 
     }
@@ -57,13 +57,21 @@ const LoginPage = () => {
                         {
                             error.login && <label className="label text-sm text-red-600">
                                 {error.login}
-                                
+
 
                             </label>
                         }
 
                         <label className="label">
-                            <Link to='/forgetPassword' className="label-text-alt font-mono link link-hover text-xl">Forgot password?</Link>
+                            <span
+                                className="label-text-alt font-mono link link-hover text-xl cursor-pointer"
+                                onClick={() => {
+                                    const email = emailRef.current.value; // Get the email from the input field
+                                    navigate('/forgetPassword', { state: { email } }); // Pass the email to Forget Password page
+                                }}
+                            >
+                                Forgot password?
+                            </span>
                         </label>
 
                     </div>
